@@ -28,12 +28,16 @@ spring:
           starttls:
             enable: true
     default-encoding: UTF-8
-
+  servlet:
+      multipart:
+        max-file-size: 5MB
+        max-request-size: 5MB
 outbound:
   identity:
     client-id: ${CLIENT_ID}
     client-secret: ${CLIENT_SECRET}
     redirect-uri: ${REDIRECT_URI}
+
 
 management:
   endpoints:
@@ -41,10 +45,7 @@ management:
       exposure:
         include: "*"
 
-  servlet:
-    multipart:
-      max-file-size: 5MB
-      max-request-size: 5MB
+
 jwt:
   signerKey: ${JWT_SECRET}
   valid-access-duration: 360000000
