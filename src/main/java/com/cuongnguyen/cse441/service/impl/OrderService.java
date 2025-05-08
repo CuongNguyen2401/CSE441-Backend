@@ -138,8 +138,8 @@ public class OrderService implements IOrderService {
         List<Tuple> results = orderRepository.getMonthlyTotalSalesRevenue();
 
         return results.stream()
-                .map(tuple -> tuple.get(1, Double.class))
-                .reduce(0.0, Double::sum);
+                .map(tuple -> tuple.get(1, Double.class)).filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue).sum();
     }
 
     @Override
@@ -231,6 +231,7 @@ public class OrderService implements IOrderService {
         notificationService.sendUpdateOrderNotificationToUser(order.getId(), order.getUser().getId());
         return orderMapper.toOrderResponse(order);
     }
+
     @Override
     public double processOrderItems(Order savedOrder, List<OrderItemRequest> orderItemRequests) {
         double totalPay = 0;

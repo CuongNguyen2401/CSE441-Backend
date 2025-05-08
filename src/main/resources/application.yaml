@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8888
   servlet:
     session:
       timeout: 30m
@@ -48,5 +48,5 @@ management:
 
 jwt:
   signerKey: ${JWT_SECRET}
-  valid-access-duration: 360000000
+  valid-access-duration: 31536000000
   valid-refresh-duration: 3600000

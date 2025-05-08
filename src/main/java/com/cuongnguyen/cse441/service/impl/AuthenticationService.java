@@ -150,7 +150,7 @@ public class AuthenticationService implements IAuthenticationService {
 
         JWTClaimsSet jwtClaimsSet = new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
-                .issuer("thanhtan.com")
+                .issuer("cuongnguyen.com")
                 .issueTime(new Date())
                 .expirationTime(new Date(
                         Instant.now().plus(duration, ChronoUnit.SECONDS).toEpochMilli()
@@ -180,7 +180,7 @@ public class AuthenticationService implements IAuthenticationService {
 
         JWTClaimsSet jwtClaimsSet = new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
-                .issuer("thanhtan.com")
+                .issuer("cuongnguyen.com")
                 .issueTime(new Date())
                 .expirationTime(new Date(
                         expirationTime

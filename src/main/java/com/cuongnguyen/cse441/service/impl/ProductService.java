@@ -275,7 +275,6 @@ public class ProductService implements IProductService {
                 .toList();
 
         for (ProductResponse productResponse : result) {
-
             productResponse.setRatings(ratingRepository.getAverageRating(productResponse.getId()));
         }
 
