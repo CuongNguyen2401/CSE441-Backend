@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 80
   servlet:
     session:
       timeout: 30m
@@ -12,9 +12,11 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
       hibernate.format_sql: true
   mail:
     host: smtp.gmail.com
