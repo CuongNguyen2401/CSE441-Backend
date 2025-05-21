@@ -45,8 +45,13 @@ management:
       exposure:
         include: "*"
 
+cloudinary:
+  cloud-name: ${CLOUDINARY_CLOUD_NAME}
+  api-key: ${CLOUDINARY_API_KEY}
+  api-secret: ${CLOUDINARY_API_SECRET}
 
 jwt:
   signerKey: ${JWT_SECRET}
   valid-access-duration: 31536000000
   valid-refresh-duration: 3600000
+
