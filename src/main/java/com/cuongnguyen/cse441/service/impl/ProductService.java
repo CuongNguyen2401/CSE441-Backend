@@ -137,9 +137,13 @@ public class ProductService implements IProductService {
             );
         }
 
-        Map data = cloudinaryService.upload(file);
-        if (data != null) {
-            newProduct.setImage((String) data.get("url"));
+        if (file != null && !file.isEmpty()) {
+            Map data = cloudinaryService.upload(file);
+            if (data != null) {
+                newProduct.setImage((String) data.get("url"));
+            }
+        } else {
+            newProduct.setImage(null);
         }
 
         newProduct = productRepository.save(newProduct);
